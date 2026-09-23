@@ -1,0 +1,20 @@
+import { getModels } from "../../models/registry.js";
+
+export const EVENT_TYPES = {
+  USER_CREATED: "USER_CREATED",
+  BUSINESS_PROFILE_CREATED: "BUSINESS_PROFILE_CREATED",
+  BUSINESS_PROFILE_UPDATED: "BUSINESS_PROFILE_UPDATED",
+  ENTITYLOCKER_CONNECTED: "ENTITYLOCKER_CONNECTED",
+  CONSENT_REQUESTED: "CONSENT_REQUESTED",
+  CONSENT_GRANTED: "CONSENT_GRANTED",
+  CONSENT_DENIED: "CONSENT_DENIED",
+  DOCUMENTS_ACCESSED: "DOCUMENTS_ACCESSED",
+  DOCUMENT_MATCH_COMPLETED: "DOCUMENT_MATCH_COMPLETED",
+  DOCUMENT_UPLOADED: "DOCUMENT_UPLOADED",
+  KYA_COMPLETED: "KYA_COMPLETED",
+};
+
+export async function logAudit(eventType, { userId, businessId, metadata } = {}) {
+  const { AuditLog } = getModels();
+  return AuditLog.create({ eventType, userId, businessId, metadata });
+}
