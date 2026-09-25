@@ -10,6 +10,16 @@ import EntityLockerMock from "./pages/EntityLockerMock.jsx";
 import BusinessProfileForm from "./pages/BusinessProfileForm.jsx";
 import ApplicationTracker from "./pages/ApplicationTracker.jsx";
 
+// Admin Imports
+import AdminLayout from "./admin/AdminLayout.jsx";
+import AdminDashboard from "./admin/AdminDashboard.jsx";
+import AdminDepartments from "./admin/AdminDepartments.jsx";
+import AdminRules from "./admin/AdminRules.jsx";
+import AdminApplications from "./admin/AdminApplications.jsx";
+import AdminSLAMonitor from "./admin/AdminSLAMonitor.jsx";
+import AdminEscalations from "./admin/AdminEscalations.jsx";
+import AdminUsers from "./admin/AdminUsers.jsx";
+
 // Small dev-only nav so every page is reachable without a real backend yet.
 function DevNav() {
   const { pathname } = useLocation();
@@ -23,6 +33,7 @@ function DevNav() {
     { to: "/entitylocker", label: "EntityLocker" },
     { to: "/business-profile", label: "Business Profile" },
     { to: "/tracker", label: "Application Tracker" },
+    { to: "/admin", label: "System Admin" },
   ];
   return (
     <div style={{
@@ -63,6 +74,17 @@ export default function App() {
           <Route path="/entitylocker" element={<EntityLockerMock />} />
           <Route path="/business-profile" element={<BusinessProfileForm />} />
           <Route path="/tracker" element={<ApplicationTracker />} />
+          
+          {/* Admin Routes */}
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<AdminDashboard />} />
+            <Route path="applications" element={<AdminApplications />} />
+            <Route path="departments" element={<AdminDepartments />} />
+            <Route path="rules" element={<AdminRules />} />
+            <Route path="sla" element={<AdminSLAMonitor />} />
+            <Route path="escalations" element={<AdminEscalations />} />
+            <Route path="users" element={<AdminUsers />} />
+          </Route>
         </Routes>
       </div>
     </BrowserRouter>
