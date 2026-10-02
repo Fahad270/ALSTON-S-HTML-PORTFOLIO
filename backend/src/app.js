@@ -10,25 +10,33 @@ import kyaRoutes from "./routes/kyaRoutes.js";
 import consentRoutes from "./routes/consentRoutes.js";
 import documentsRoutes from "./routes/documentsRoutes.js";
 import miscRoutes from "./routes/miscRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
 import { errorHandler, notFound } from "./middleware/errorHandler.js";
 
-export function createApp() {
+export function createApp({ mongoEnabled = false } = {}) {
   const app = express();
 
   app.use(helmet());
   app.use(cors());
   app.use(express.json({ limit: "2mb" }));
 
-  app.get("/api/health", (req, res) => res.json({ success: true, data: { status: "ok" } }));
+  app.get("/api/health", (req, res) =>
+    res.json({ success: true, data: { status: "ok", mongo: mongoEnabled, adminStore: "static-json" } })
+  );
 
-  app.use("/api/auth", authRoutes);
-  app.use("/api/business-profile", businessProfileRoutes);
-  app.use("/api/integrations/digilocker", digilockerRoutes);
-  app.use("/api/integrations/entitylocker", entitylockerRoutes);
-  app.use("/api/kya", kyaRoutes);
-  app.use("/api/consent", consentRoutes);
-  app.use("/api/documents", documentsRoutes);
-  app.use("/api", miscRoutes); // /api/dashboard, /api/notifications, /api/incentives, /api/rag/ask
+  // Local JSON-backed admin console (no cloud DB required)
+  app.use("/api/admin", adminRoutes);
+
+  if (mongoEnabled) {
+    app.use("/api/auth", authRoutes);
+    app.use("/api/business-profile", businessProfileRoutes);
+    app.use("/api/integrations/digilocker", digilockerRoutes);
+    app.use("/api/integrations/entitylocker", entitylockerRoutes);
+    app.use("/api/kya", kyaRoutes);
+    app.use("/api/consent", consentRoutes);
+    app.use("/api/documents", documentsRoutes);
+    app.use("/api", miscRoutes);
+  }
 
   app.use(notFound);
   app.use(errorHandler);

@@ -19,6 +19,10 @@ import AdminApplications from "./admin/AdminApplications.jsx";
 import AdminSLAMonitor from "./admin/AdminSLAMonitor.jsx";
 import AdminEscalations from "./admin/AdminEscalations.jsx";
 import AdminUsers from "./admin/AdminUsers.jsx";
+import AdminSLAProtectionQueue from "./admin/AdminSLAProtectionQueue.jsx";
+import AdminResolveDashboard from "./admin/AdminResolveDashboard.jsx";
+import AdminResolveIssueDetail from "./admin/AdminResolveIssueDetail.jsx";
+import AdminResolveKnowledgeBase from "./admin/AdminResolveKnowledgeBase.jsx";
 
 // Small dev-only nav so every page is reachable without a real backend yet.
 function DevNav() {
@@ -34,6 +38,8 @@ function DevNav() {
     { to: "/business-profile", label: "Business Profile" },
     { to: "/tracker", label: "Application Tracker" },
     { to: "/admin", label: "System Admin" },
+    { to: "/admin/sla-protection", label: "SLA Protection" },
+    { to: "/admin/resolve", label: "PRAGATI RESOLVE" },
   ];
   return (
     <div style={{
@@ -54,7 +60,7 @@ function DevNav() {
           {l.label}
         </Link>
       ))}
-      <span style={{ color: "#647082", marginLeft: "auto" }}>BeeSetu — dev preview nav</span>
+      <span style={{ color: "#647082", marginLeft: "auto" }}>PragatiSetu — dev preview nav</span>
     </div>
   );
 }
@@ -82,8 +88,12 @@ export default function App() {
             <Route path="departments" element={<AdminDepartments />} />
             <Route path="rules" element={<AdminRules />} />
             <Route path="sla" element={<AdminSLAMonitor />} />
+            <Route path="sla-protection" element={<AdminSLAProtectionQueue />} />
             <Route path="escalations" element={<AdminEscalations />} />
             <Route path="users" element={<AdminUsers />} />
+            <Route path="resolve" element={<AdminResolveDashboard />} />
+            <Route path="resolve/issue/:id" element={<AdminResolveIssueDetail />} />
+            <Route path="resolve/knowledge-base" element={<AdminResolveKnowledgeBase />} />
           </Route>
         </Routes>
       </div>

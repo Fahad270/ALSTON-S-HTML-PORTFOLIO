@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Landmark, Vault, ArrowRight } from "lucide-react";
 
 /*
-  BeeSetu — Document source choice
+  PragatiSetu — Document source choice
   Runs right after "Identity completed" (either DigiLocker or manual path).
   Choosing EntityLocker routes into its own sandbox connect flow; choosing
   the vault skips straight to the business profile, per the spec — no
@@ -46,7 +46,7 @@ export default function DocumentSourceChoice() {
       <div className="setu-tricolour" />
       <div className="setu-center">
         <div className="setu-wrap">
-          <div className="setu-brand"><div className="setu-mark">S</div><div className="setu-brand-name">BeeSetu</div></div>
+          <div className="setu-brand"><div className="setu-mark">S</div><div className="setu-brand-name">PragatiSetu</div></div>
           <h1>Where should we get your business documents?</h1>
           <div className="sub">You won't be forced to upload anything right now, either way.</div>
 
@@ -54,12 +54,12 @@ export default function DocumentSourceChoice() {
             <div className="setu-card el" onClick={() => navigate("/entitylocker")}>
               <div className="ring"><Landmark size={20} /></div>
               <h3>I already have an EntityLocker account</h3>
-              <p>Connect it and BeeSetu reuses your existing issued documents — PAN, GST, incorporation certificate and more.</p>
+              <p>Connect it and PragatiSetu reuses your existing issued documents — PAN, GST, incorporation certificate and more.</p>
               <div className="go">Connect EntityLocker <ArrowRight size={13} /></div>
             </div>
             <div className="setu-card vault" onClick={() => navigate("/business-profile")}>
               <div className="ring"><Vault size={20} /></div>
-              <h3>Use BeeSetu's Document Vault</h3>
+              <h3>Use PragatiSetu's Document Vault</h3>
               <p>Start with an empty vault. You can add documents whenever you're ready — nothing is required immediately.</p>
               <div className="go">Continue with the vault <ArrowRight size={13} /></div>
             </div>

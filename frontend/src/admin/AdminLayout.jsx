@@ -1,20 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
-import { 
-  LayoutDashboard, 
-  Building2, 
-  FileSignature, 
-  Scale, 
-  Clock, 
-  ShieldAlert, 
-  Users, 
+import {
+  LayoutDashboard,
+  Building2,
+  FileSignature,
+  Scale,
+  Clock,
+  ShieldAlert,
+  Users,
   Settings,
   LogOut,
-  Bell
+  Bell,
+  AlertTriangle,
+  CheckCircle2
 } from "lucide-react";
+import { adminApi } from "../api/adminApi.js";
+import { Modal } from "./AdminUI.jsx";
 
 export default function AdminLayout() {
   const { pathname } = useLocation();
+  const [notifCount, setNotifCount] = useState(0);
+  const [notifications, setNotifications] = useState([]);
+  const [showNotifs, setShowNotifs] = useState(false);
+
+  useEffect(() => {
+    adminApi.listNotifications()
+      .then((data) => {
+        setNotifications(data.items || []);
+        setNotifCount((data.items || []).filter((n) => !n.read).length);
+      })
+      .catch(() => {});
+  }, [pathname]);
 
   const navItems = [
     { label: "Dashboard", path: "/admin", icon: LayoutDashboard },
@@ -22,7 +38,9 @@ export default function AdminLayout() {
     { label: "Departments", path: "/admin/departments", icon: Building2 },
     { label: "Rules Engine", path: "/admin/rules", icon: Scale },
     { label: "SLA Monitor", path: "/admin/sla", icon: Clock },
+    { label: "SLA Protection", path: "/admin/sla-protection", icon: AlertTriangle },
     { label: "Escalations", path: "/admin/escalations", icon: ShieldAlert },
+    { label: "PRAGATI RESOLVE", path: "/admin/resolve", icon: CheckCircle2 },
     { label: "Users & Roles", path: "/admin/users", icon: Users },
   ];
 
@@ -41,7 +59,7 @@ export default function AdminLayout() {
         <div style={{ padding: "24px 20px", borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
             <div style={{ width: 32, height: 32, borderRadius: 8, background: "linear-gradient(135deg, #CC6D1D, #128807)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: "bold", fontSize: 18 }}>B</div>
-            <span style={{ fontSize: 20, fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", letterSpacing: 0.5 }}>BeeSetu Admin</span>
+            <span style={{ fontSize: 20, fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", letterSpacing: 0.5 }}>PragatiSetu Admin</span>
           </div>
           <div style={{ marginTop: 6, fontSize: 11, color: "#9FB0C2", fontWeight: 500, letterSpacing: 0.5 }}>STATE ADMINISTRATION CONSOLE</div>
         </div>
@@ -121,14 +139,16 @@ export default function AdminLayout() {
             </h2>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
-            <div style={{ position: "relative", cursor: "pointer" }}>
+            <div style={{ position: "relative", cursor: "pointer" }} onClick={() => setShowNotifs(true)}>
               <Bell size={20} color="#1C2A36" />
-              <span style={{ 
-                position: "absolute", top: -4, right: -4, background: "#B4342A", 
-                color: "#fff", fontSize: 10, fontWeight: "bold", 
-                width: 16, height: 16, borderRadius: "50%",
-                display: "flex", alignItems: "center", justifyContent: "center"
-              }}>3</span>
+              {notifCount > 0 && (
+                <span style={{ 
+                  position: "absolute", top: -4, right: -4, background: "#B4342A", 
+                  color: "#fff", fontSize: 10, fontWeight: "bold", 
+                  width: 16, height: 16, borderRadius: "50%",
+                  display: "flex", alignItems: "center", justifyContent: "center"
+                }}>{notifCount}</span>
+              )}
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: 12, borderLeft: "1px solid #DADFDA", paddingLeft: 24 }}>
               <div style={{ textAlign: "right" }}>
@@ -147,6 +167,20 @@ export default function AdminLayout() {
           <Outlet />
         </div>
       </main>
+
+      {showNotifs && (
+        <Modal title="Notifications" onClose={() => setShowNotifs(false)}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            {notifications.map((n) => (
+              <div key={n.id} style={{ padding: 14, borderRadius: 8, border: "1px solid #DADFDA", background: n.read ? "#fff" : "#F5F6F3" }}>
+                <div style={{ fontWeight: 600, color: "#0B2036", fontSize: 14 }}>{n.title}</div>
+                <div style={{ color: "#1C2A36", fontSize: 13, marginTop: 4 }}>{n.body}</div>
+              </div>
+            ))}
+            {notifications.length === 0 && <div style={{ color: "#1C2A36" }}>No notifications.</div>}
+          </div>
+        </Modal>
+      )}
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Fingerprint, UserPlus, ArrowRight } from "lucide-react";
 
 /*
-  BeeSetu — Identity gate
+  PragatiSetu — Identity gate
   First real fork in the journey: DigiLocker (for people who already have an
   account) vs manual signup (for people who don't). Both paths converge on
   the same next step: /document-source.
@@ -49,7 +49,7 @@ export default function IdentityGate() {
       <div className="setu-tricolour" />
       <div className="setu-center">
         <div className="setu-wrap">
-          <div className="setu-brand"><div className="setu-mark">S</div><div className="setu-brand-name">BeeSetu</div></div>
+          <div className="setu-brand"><div className="setu-mark">S</div><div className="setu-brand-name">PragatiSetu</div></div>
           <h1>How would you like to sign in?</h1>
           <div className="sub">Both paths lead to the same place — pick whichever you already have.</div>
 
@@ -64,7 +64,7 @@ export default function IdentityGate() {
             <div className="setu-card manual" onClick={() => navigate("/signup")}>
               <div className="ring"><UserPlus size={20} /></div>
               <h3>I don't have DigiLocker</h3>
-              <p>Sign up manually with your name, phone, email and a demo Aadhaar. Stored only in BeeSetu's own database.</p>
+              <p>Sign up manually with your name, phone, email and a demo Aadhaar. Stored only in PragatiSetu's own database.</p>
               <div className="go">Sign up manually <ArrowRight size={13} /></div>
             </div>
           </div>

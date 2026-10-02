@@ -53,7 +53,7 @@ export default function SignIn() {
       <div className="setu-tricolour" />
       <div className="setu-center">
         <div className="setu-card">
-          <div className="setu-brand"><div className="setu-mark">S</div><div className="setu-brand-name">BeeSetu</div></div>
+          <div className="setu-brand"><div className="setu-mark">S</div><div className="setu-brand-name">PragatiSetu</div></div>
 
           {!signedIn ? (
             <form onSubmit={submit}>

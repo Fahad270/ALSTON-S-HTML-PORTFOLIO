@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 
 /*
-  BeeSetu — Unified Approval & Compliance Platform
+  PragatiSetu — Unified Approval & Compliance Platform
   SIH 2026 · PS 26130
 
   Re-themed to echo india.gov.in's national-portal language: a dark hero
@@ -141,7 +141,7 @@ export default function LandingPage() {
       <section className="bs-below" id="features">
         <h2>One profile. One intelligent approval journey.</h2>
         <p className="lede">
-          BeeSetu builds a customised checklist for your business, checks it against
+          PragatiSetu builds a customised checklist for your business, checks it against
           your documents automatically, and routes it to every department at once —
           so approvals move in parallel, with a tamper-evident record of every step.
         </p>

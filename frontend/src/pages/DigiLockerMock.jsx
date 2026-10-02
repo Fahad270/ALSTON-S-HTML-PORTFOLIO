@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Fingerprint, ArrowRight, Info, ShieldCheck } from "lucide-react";
 
 /*
-  BeeSetu — DigiLocker sandbox (identity mock)
+  PragatiSetu — DigiLocker sandbox (identity mock)
   Mimics the shape of a DigiLocker identity check: name + Aadhaar + phone,
   then OTP. No real DigiLocker API is called — this is a self-contained
   frontend mock (matching backend/src/controllers/digilockerController.js

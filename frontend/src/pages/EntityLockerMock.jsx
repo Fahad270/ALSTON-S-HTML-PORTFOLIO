@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Landmark, ArrowRight, Info, CheckCircle2, FileText } from "lucide-react";
 
 /*
-  BeeSetu — EntityLocker sandbox
+  PragatiSetu — EntityLocker sandbox
   Mirrors the real Entity Locker API's shape (see backend/src/mock for the
   matching server-side version): the `acr` the real /oauth2/1/authorize
   endpoint would use — pan, cin or udyam — depends on entity type, which is

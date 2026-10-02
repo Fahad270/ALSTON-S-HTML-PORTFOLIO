@@ -1,0 +1,914 @@
+{
+  "meta": {
+    "version": 1,
+    "state": "Maharashtra",
+    "lastSeeded": "2026-09-28T10:00:00.000Z"
+  },
+  "kpis": {
+    "totalApplications": 2405,
+    "totalApplicationsTrend": "+12%",
+    "slaAdherenceRate": 94.2,
+    "slaAdherenceTrend": "-1.1%",
+    "activeEscalations": 2,
+    "activeEscalationsTrend": "+5",
+    "deemedApprovals": 17,
+    "deemedApprovalsTrend": "0"
+  },
+  "departments": [
+    {
+      "id": "dept-ind",
+      "code": "IND_LABOUR",
+      "name": "Industry, Energy & Labour Department",
+      "nodalOfficer": "Vikram Deshmukh",
+      "nodalOfficerId": "usr-vikram",
+      "activeApps": 8,
+      "avgSlaDays": 14,
+      "status": "Healthy",
+      "services": [
+        "Factory Licence",
+        "Boiler Registration",
+        "Labour Welfare Registration"
+      ]
+    },
+    {
+      "id": "dept-urban",
+      "code": "URBAN_DEV",
+      "name": "Urban Development & Municipal Corporation",
+      "nodalOfficer": "Sunita Patil",
+      "nodalOfficerId": "usr-sunita",
+      "activeApps": 12,
+      "avgSlaDays": 7,
+      "status": "Healthy",
+      "services": [
+        "Building Plan Approval",
+        "Occupancy Certificate",
+        "Trade Licence"
+      ]
+    },
+    {
+      "id": "dept-mpcb",
+      "code": "MPCB",
+      "name": "Maharashtra Pollution Control Board",
+      "nodalOfficer": "Dr. Anand Kulkarni",
+      "nodalOfficerId": "usr-anand",
+      "activeApps": 5,
+      "avgSlaDays": 21,
+      "status": "Warning",
+      "services": [
+        "Consent to Establish",
+        "Consent to Operate",
+        "Hazardous Waste Authorisation"
+      ]
+    },
+    {
+      "id": "dept-fire",
+      "code": "FIRE_SAFETY",
+      "name": "Fire & Emergency Services Directorate",
+      "nodalOfficer": "R. K. Shinde",
+      "nodalOfficerId": "usr-shinde",
+      "activeApps": 3,
+      "avgSlaDays": 10,
+      "status": "Healthy",
+      "services": [
+        "Fire NOC",
+        "Fire Safety Certificate",
+        "Hazardous Storage Clearance"
+      ]
+    },
+    {
+      "id": "dept-fssai",
+      "code": "FSSAI",
+      "name": "Food Safety and Standards Authority",
+      "nodalOfficer": "Meena Iyer",
+      "nodalOfficerId": "usr-meena",
+      "activeApps": 15,
+      "avgSlaDays": 30,
+      "status": "Critical",
+      "services": [
+        "FSSAI State Licence",
+        "FSSAI Central Licence",
+        "Food Business Registration"
+      ]
+    },
+    {
+      "id": "dept-transport",
+      "code": "TRANSPORT",
+      "name": "Transport Department",
+      "nodalOfficer": "A. Patel",
+      "nodalOfficerId": "usr-patel",
+      "activeApps": 6,
+      "avgSlaDays": 12,
+      "status": "Healthy",
+      "services": [
+        "Commercial Vehicle Permit",
+        "Warehouse Transport Clearance"
+      ]
+    },
+    {
+      "id": "dept-energy",
+      "code": "ENERGY",
+      "name": "Energy Department",
+      "nodalOfficer": "M. Sharma",
+      "nodalOfficerId": "usr-sharma",
+      "activeApps": 4,
+      "avgSlaDays": 18,
+      "status": "Warning",
+      "services": [
+        "HT Connection Approval",
+        "Captive Power Clearance"
+      ]
+    }
+  ],
+  "applications": [
+    {
+      "id": "APP-9145",
+      "business": "Demo Manufacturing Pvt Ltd",
+      "type": "New Business Setup",
+      "sector": "Manufacturing",
+      "district": "Pune",
+      "dept": "Multiple (3)",
+      "departmentCodes": [
+        "IND_LABOUR",
+        "MPCB",
+        "FIRE_SAFETY"
+      ],
+      "submissionDate": "2026-10-12",
+      "status": "In Progress",
+      "slaDaysLeft": 12,
+      "slaLabel": "12 days left",
+      "stage": "Parallel Department Review",
+      "officer": "Vikram Deshmukh",
+      "investment": 45000000,
+      "employeeCount": 120,
+      "notes": "KYA generated Fire NOC, CTE (Orange), Factory Licence. Joint inspection proposed for week of 20 Oct."
+    },
+    {
+      "id": "APP-9142",
+      "business": "EcoTech Solutions",
+      "type": "Consent to Operate",
+      "sector": "IT / ITeS",
+      "district": "Thane",
+      "dept": "Pollution Control",
+      "departmentCodes": [
+        "MPCB"
+      ],
+      "submissionDate": "2026-10-10",
+      "status": "Halted",
+      "slaDaysLeft": null,
+      "slaLabel": "Awaiting Doc",
+      "stage": "Document Clarification",
+      "officer": "Dr. Anand Kulkarni",
+      "investment": 8000000,
+      "employeeCount": 45,
+      "notes": "Stack emission report incomplete. Query raised 11 Oct 2026."
+    },
+    {
+      "id": "APP-9130",
+      "business": "Apex Logistics",
+      "type": "Commercial Transport",
+      "sector": "Logistics & Warehousing",
+      "district": "Nagpur",
+      "dept": "Transport Dept",
+      "departmentCodes": [
+        "TRANSPORT"
+      ],
+      "submissionDate": "2026-10-05",
+      "status": "Approved",
+      "slaDaysLeft": 0,
+      "slaLabel": "Cleared",
+      "stage": "Closed",
+      "officer": "A. Patel",
+      "investment": 15000000,
+      "employeeCount": 80,
+      "notes": "Fleet permit approved. QR clearance issued."
+    },
+    {
+      "id": "APP-9118",
+      "business": "Sunrise Foods",
+      "type": "FSSAI Licence",
+      "sector": "Agro-processing",
+      "district": "Nashik",
+      "dept": "FSSAI / Health",
+      "departmentCodes": [
+        "FSSAI"
+      ],
+      "submissionDate": "2026-09-28",
+      "status": "Escalated",
+      "slaDaysLeft": -2,
+      "slaLabel": "-2 days (Breach)",
+      "stage": "Nodal Review",
+      "officer": "Meena Iyer",
+      "investment": 12000000,
+      "employeeCount": 65,
+      "notes": "SLA breached. Escalated to Chief Nodal Officer with evidence package."
+    },
+    {
+      "id": "APP-9092",
+      "business": "BlueWave Tech",
+      "type": "IT Park Clearance",
+      "sector": "IT / ITeS",
+      "district": "Pune",
+      "dept": "Urban Dev",
+      "departmentCodes": [
+        "URBAN_DEV"
+      ],
+      "submissionDate": "2026-09-25",
+      "status": "Approved",
+      "slaDaysLeft": 0,
+      "slaLabel": "Cleared",
+      "stage": "Closed",
+      "officer": "Sunita Patil",
+      "investment": 22000000,
+      "employeeCount": 200,
+      "notes": "Building plan + occupancy cleared under IT park incentive."
+    },
+    {
+      "id": "APP-9085",
+      "business": "SteelForge Industries",
+      "type": "Factory Expansion",
+      "sector": "Manufacturing",
+      "district": "Kolhapur",
+      "dept": "Industry & Labour",
+      "departmentCodes": [
+        "IND_LABOUR",
+        "MPCB"
+      ],
+      "submissionDate": "2026-09-20",
+      "status": "Rejected",
+      "slaDaysLeft": 0,
+      "slaLabel": "Closed",
+      "stage": "Closed",
+      "officer": "Vikram Deshmukh",
+      "investment": 90000000,
+      "employeeCount": 340,
+      "notes": "Rejected: site within restricted buffer of residential zone. Appeal window open till 20 Oct."
+    },
+    {
+      "id": "APP-9177",
+      "business": "Nova Power Corp",
+      "type": "HT Connection Approval",
+      "sector": "Manufacturing",
+      "district": "Aurangabad",
+      "dept": "Energy Dept",
+      "departmentCodes": [
+        "ENERGY"
+      ],
+      "submissionDate": "2026-10-14",
+      "status": "Approved",
+      "slaDaysLeft": 0,
+      "slaLabel": "Cleared",
+      "stage": "Closed",
+      "officer": "Ramesh P.",
+      "investment": 55000000,
+      "employeeCount": 95,
+      "notes": "At risk — final load sanction pending DISCOM concurrence.",
+      "slaRisk": "at_risk",
+      "progress": 95
+    },
+    {
+      "id": "APP-9182",
+      "business": "CityScape Builders",
+      "type": "Building Plan Approval",
+      "sector": "Services",
+      "district": "Mumbai Suburban",
+      "dept": "Urban Dev",
+      "departmentCodes": [
+        "URBAN_DEV",
+        "FIRE_SAFETY"
+      ],
+      "submissionDate": "2026-10-13",
+      "status": "In Progress",
+      "slaDaysLeft": 0,
+      "slaLabel": "5 hours left",
+      "stage": "Site Inspection",
+      "officer": "S. K. Iyer",
+      "investment": 180000000,
+      "employeeCount": 40,
+      "notes": "Joint fire + municipal inspection scheduled today 4 PM.",
+      "slaRisk": "at_risk",
+      "progress": 80
+    },
+    {
+      "id": "APP-9190",
+      "business": "MediLife Pharma",
+      "type": "Consent to Establish (Orange)",
+      "sector": "Pharma & Chemicals",
+      "district": "Pune",
+      "dept": "Pollution Control",
+      "departmentCodes": [
+        "MPCB"
+      ],
+      "submissionDate": "2026-10-08",
+      "status": "In Progress",
+      "slaDaysLeft": 1,
+      "slaLabel": "1 day left",
+      "stage": "Final Approval",
+      "officer": "Anjali M.",
+      "investment": 75000000,
+      "employeeCount": 150,
+      "notes": "Effluent treatment plan under final MPCB scrutiny.",
+      "slaRisk": "at_risk",
+      "progress": 60
+    },
+    {
+      "id": "APP-9021",
+      "business": "Horizon Chemicals",
+      "type": "Fire Safety NOC",
+      "sector": "Pharma & Chemicals",
+      "district": "Raigad",
+      "dept": "Fire & Emergency",
+      "departmentCodes": [
+        "FIRE_SAFETY"
+      ],
+      "submissionDate": "2026-09-30",
+      "status": "In Progress",
+      "slaDaysLeft": 1,
+      "slaLabel": "< 24h left",
+      "stage": "Risk Assessment",
+      "officer": "R. K. Shinde",
+      "investment": 32000000,
+      "employeeCount": 70,
+      "notes": "SLA deadline approaching. Hazardous material storage layout under review.",
+      "slaRisk": "at_risk",
+      "progress": 70
+    },
+    {
+      "id": "APP-8990",
+      "business": "SolarTech India",
+      "type": "Captive Power Clearance",
+      "sector": "Manufacturing",
+      "district": "Satara",
+      "dept": "Energy Dept",
+      "departmentCodes": [
+        "ENERGY"
+      ],
+      "submissionDate": "2026-09-15",
+      "status": "Approved",
+      "slaDaysLeft": 0,
+      "slaLabel": "Cleared",
+      "stage": "Deemed Approved (RTS)",
+      "officer": "M. Sharma",
+      "investment": 110000000,
+      "employeeCount": 88,
+      "notes": "Site inspection evidence incomplete — escalated.\n[Deemed Approval] Granted via ESC-8012 under Right to Service Act."
+    },
+    {
+      "id": "APP-8975",
+      "business": "Global Logistics",
+      "type": "Warehouse Transport Clearance",
+      "sector": "Logistics & Warehousing",
+      "district": "Palghar",
+      "dept": "Transport Dept",
+      "departmentCodes": [
+        "TRANSPORT"
+      ],
+      "submissionDate": "2026-09-18",
+      "status": "Approved",
+      "slaDaysLeft": 0,
+      "slaLabel": "Cleared",
+      "stage": "Deemed Approved (RTS)",
+      "officer": "A. Patel",
+      "investment": 28000000,
+      "employeeCount": 55,
+      "notes": "Awaiting regional transport committee slot.\n[Deemed Approval] Granted via ESC-8011 under Right to Service Act."
+    },
+    {
+      "id": "APP-8910",
+      "business": "Urban Eats Chain",
+      "type": "FSSAI State Licence",
+      "sector": "Services",
+      "district": "Mumbai City",
+      "dept": "Health Dept",
+      "departmentCodes": [
+        "FSSAI"
+      ],
+      "submissionDate": "2026-09-10",
+      "status": "Approved",
+      "slaDaysLeft": 0,
+      "slaLabel": "Cleared",
+      "stage": "Deemed Approved (RTS)",
+      "officer": "S. Rao",
+      "investment": 6000000,
+      "employeeCount": 120,
+      "notes": "Multi-outlet licence docs mismatch across locations.\n[Deemed Approval] Granted via ESC-8009 under Right to Service Act."
+    },
+    {
+      "id": "APP-8834",
+      "business": "GreenCycle Recyclers",
+      "type": "Hazardous Waste Authorisation",
+      "sector": "Manufacturing",
+      "district": "Pune",
+      "dept": "Pollution Control",
+      "departmentCodes": [
+        "MPCB"
+      ],
+      "submissionDate": "2026-09-05",
+      "status": "Escalated",
+      "slaDaysLeft": -3,
+      "slaLabel": "Breached",
+      "stage": "Escalated to Nodal Officer",
+      "officer": "Dr. Anand Kulkarni",
+      "investment": 18000000,
+      "employeeCount": 40,
+      "notes": "SLA breached during lab analysis wait."
+    }
+  ],
+  "rules": [
+    {
+      "id": "RULE-FC-01",
+      "name": "Fire Safety NOC",
+      "sector": "Manufacturing",
+      "state": "Maharashtra",
+      "departmentCode": "FIRE_SAFETY",
+      "conditions": "Building Height > 15m OR Hazardous Materials = true",
+      "slaDays": 15,
+      "sla": "15 Days",
+      "status": "Active",
+      "version": 3,
+      "lastModified": "2026-09-20"
+    },
+    {
+      "id": "RULE-PCB-02",
+      "name": "Consent to Establish (Orange)",
+      "sector": "Any",
+      "state": "Maharashtra",
+      "departmentCode": "MPCB",
+      "conditions": "Environmental Category = Orange",
+      "slaDays": 30,
+      "sla": "30 Days",
+      "status": "Active",
+      "version": 5,
+      "lastModified": "2026-09-18"
+    },
+    {
+      "id": "RULE-LB-03",
+      "name": "Labour Welfare Fund",
+      "sector": "Any",
+      "state": "Central",
+      "departmentCode": "IND_LABOUR",
+      "conditions": "Employees >= 5",
+      "slaDays": 0,
+      "sla": "Instant",
+      "status": "Active",
+      "version": 2,
+      "lastModified": "2026-08-12"
+    },
+    {
+      "id": "RULE-FSS-04",
+      "name": "FSSAI State Licence",
+      "sector": "Agro-processing",
+      "state": "Maharashtra",
+      "departmentCode": "FSSAI",
+      "conditions": "Food handling = true AND turnover > 12L",
+      "slaDays": 30,
+      "sla": "30 Days",
+      "status": "Active",
+      "version": 4,
+      "lastModified": "2026-09-01"
+    },
+    {
+      "id": "RULE-URB-05",
+      "name": "Building Plan Approval",
+      "sector": "Any",
+      "state": "Maharashtra",
+      "departmentCode": "URBAN_DEV",
+      "conditions": "New construction OR floor area expansion > 10%",
+      "slaDays": 7,
+      "sla": "7 Days",
+      "status": "Active",
+      "version": 6,
+      "lastModified": "2026-09-25"
+    },
+    {
+      "id": "RULE-TR-06",
+      "name": "Commercial Transport Permit",
+      "sector": "Logistics & Warehousing",
+      "state": "Maharashtra",
+      "departmentCode": "TRANSPORT",
+      "conditions": "Fleet size >= 1 OR warehouse dispatch = true",
+      "slaDays": 12,
+      "sla": "12 Days",
+      "status": "Active",
+      "version": 1,
+      "lastModified": "2026-07-30"
+    }
+  ],
+  "ruleStats": {
+    "activeRules": 1248,
+    "proposedChanges": 12
+  },
+  "slaStats": [
+    {
+      "label": "On Track",
+      "key": "on_track",
+      "count": 1845,
+      "color": "#128807",
+      "percentage": "78%"
+    },
+    {
+      "label": "At Risk (< 3 Days)",
+      "key": "at_risk",
+      "count": 320,
+      "color": "#CC6D1D",
+      "percentage": "13%"
+    },
+    {
+      "label": "Breached",
+      "key": "breached",
+      "count": 215,
+      "color": "#B4342A",
+      "percentage": "9%"
+    }
+  ],
+  "escalations": [
+    {
+      "id": "ESC-8012",
+      "appId": "APP-8990",
+      "business": "SolarTech India",
+      "dept": "Energy Dept",
+      "departmentCode": "ENERGY",
+      "officer": "M. Sharma",
+      "breachTime": "12 hours ago",
+      "breachedAt": "2026-09-28T02:00:00.000Z",
+      "reason": "Pending Site Inspection Document",
+      "risk": "High",
+      "status": "DeemedApproved",
+      "evidence": {
+        "timeline": [
+          {
+            "at": "2026-09-15T09:00:00.000Z",
+            "event": "Application submitted"
+          },
+          {
+            "at": "2026-09-18T11:30:00.000Z",
+            "event": "Assigned to Energy Dept officer M. Sharma"
+          },
+          {
+            "at": "2026-09-22T16:00:00.000Z",
+            "event": "Site inspection scheduled"
+          },
+          {
+            "at": "2026-09-25T10:00:00.000Z",
+            "event": "Inspection held — photo evidence incomplete"
+          },
+          {
+            "at": "2026-09-27T18:00:00.000Z",
+            "event": "SLA breached — auto-escalated to Nodal Officer"
+          }
+        ],
+        "documents": [
+          "Site Layout.pdf",
+          "Load Calculation.xlsx",
+          "Incomplete Inspection Photos.zip"
+        ],
+        "dependencyContext": "HT clearance blocked until captive solar layout verified against DISCOM feeder capacity."
+      },
+      "deemedApprovedAt": "2026-09-28T16:36:20.860Z",
+      "deemedApprovedBy": "Amit Joshi (Chief Nodal Officer)"
+    },
+    {
+      "id": "ESC-8011",
+      "appId": "APP-8975",
+      "business": "Global Logistics",
+      "dept": "Transport Dept",
+      "departmentCode": "TRANSPORT",
+      "officer": "A. Patel",
+      "breachTime": "1 day ago",
+      "breachedAt": "2026-09-27T10:00:00.000Z",
+      "reason": "Awaiting Committee Approval",
+      "risk": "Medium",
+      "status": "DeemedApproved",
+      "evidence": {
+        "timeline": [
+          {
+            "at": "2026-09-18T08:00:00.000Z",
+            "event": "Application submitted"
+          },
+          {
+            "at": "2026-09-20T14:00:00.000Z",
+            "event": "Document verification complete"
+          },
+          {
+            "at": "2026-09-24T09:00:00.000Z",
+            "event": "Queued for Regional Transport Committee"
+          },
+          {
+            "at": "2026-09-27T10:00:00.000Z",
+            "event": "SLA breached — escalated"
+          }
+        ],
+        "documents": [
+          "Fleet Manifest.pdf",
+          "Warehouse Lease.pdf",
+          "Insurance Cover.pdf"
+        ],
+        "dependencyContext": "Committee meets fortnightly; next slot 03 Oct."
+      },
+      "deemedApprovedAt": "2026-09-28T16:38:17.080Z",
+      "deemedApprovedBy": "Amit Joshi (Chief Nodal Officer)"
+    },
+    {
+      "id": "ESC-8009",
+      "appId": "APP-8910",
+      "business": "Urban Eats Chain",
+      "dept": "Health Dept",
+      "departmentCode": "FSSAI",
+      "officer": "S. Rao",
+      "breachTime": "2 days ago",
+      "breachedAt": "2026-09-26T12:00:00.000Z",
+      "reason": "Document Verification Delayed",
+      "risk": "High",
+      "status": "DeemedApproved",
+      "evidence": {
+        "timeline": [
+          {
+            "at": "2026-09-10T09:00:00.000Z",
+            "event": "Multi-outlet FSSAI application filed"
+          },
+          {
+            "at": "2026-09-14T11:00:00.000Z",
+            "event": "Query raised on outlet address mismatch"
+          },
+          {
+            "at": "2026-09-20T15:00:00.000Z",
+            "event": "Partial response received"
+          },
+          {
+            "at": "2026-09-26T12:00:00.000Z",
+            "event": "SLA breached — escalated to Nodal"
+          }
+        ],
+        "documents": [
+          "Outlet List.xlsx",
+          "FSSAI Form B.pdf",
+          "GSTIN Certificates.zip"
+        ],
+        "dependencyContext": "3 of 7 outlets have address mismatch vs GST records."
+      },
+      "deemedApprovedAt": "2026-10-02T10:37:56.574Z",
+      "deemedApprovedBy": "Amit Joshi (Chief Nodal Officer)"
+    },
+    {
+      "id": "ESC-8008",
+      "appId": "APP-8834",
+      "business": "GreenCycle Recyclers",
+      "dept": "Pollution Control",
+      "departmentCode": "MPCB",
+      "officer": "Dr. Anand Kulkarni",
+      "breachTime": "5 hours ago",
+      "breachedAt": "2026-09-28T09:00:00.000Z",
+      "reason": "Lab Analysis Delay",
+      "risk": "High",
+      "status": "Open",
+      "evidence": {
+        "timeline": [
+          {
+            "at": "2026-09-05T10:00:00.000Z",
+            "event": "Hazardous waste authorisation filed"
+          },
+          {
+            "at": "2026-09-12T09:00:00.000Z",
+            "event": "Samples sent to MPCB lab"
+          },
+          {
+            "at": "2026-09-28T09:00:00.000Z",
+            "event": "SLA breached — lab report still pending"
+          }
+        ],
+        "documents": [
+          "Waste Manifest.pdf",
+          "Sample Chain of Custody.pdf"
+        ],
+        "dependencyContext": "Authorisation cannot be granted without lab characterisation report."
+      }
+    },
+    {
+      "id": "ESC-8007",
+      "appId": "APP-9118",
+      "business": "Sunrise Foods",
+      "dept": "FSSAI / Health",
+      "departmentCode": "FSSAI",
+      "officer": "Meena Iyer",
+      "breachTime": "2 days ago",
+      "breachedAt": "2026-09-26T08:00:00.000Z",
+      "reason": "Inspection Slot Unavailable",
+      "risk": "High",
+      "status": "Open",
+      "evidence": {
+        "timeline": [
+          {
+            "at": "2026-09-28T00:00:00.000Z",
+            "event": "Note: submission 28 Sep — SLA clock from filing"
+          },
+          {
+            "at": "2026-10-05T10:00:00.000Z",
+            "event": "Field inspection repeatedly rescheduled"
+          },
+          {
+            "at": "2026-09-26T08:00:00.000Z",
+            "event": "Escalated under RTS Act"
+          }
+        ],
+        "documents": [
+          "Plant Layout.pdf",
+          "Water Test Report.pdf",
+          "HACCP Plan.pdf"
+        ],
+        "dependencyContext": "Inspector availability conflict with neighbouring district drive."
+      }
+    }
+  ],
+  "users": [
+    {
+      "id": "usr-amit",
+      "name": "Amit Joshi",
+      "email": "amit.joshi@beesetu.gov.in",
+      "role": "Chief Nodal Officer",
+      "dept": "All Departments",
+      "status": "Active",
+      "lastLogin": "Today, 10:45 AM"
+    },
+    {
+      "id": "usr-vikram",
+      "name": "Vikram Deshmukh",
+      "email": "vikram.deshmukh@indlabour.mh.gov.in",
+      "role": "Department Officer",
+      "dept": "Industry & Labour",
+      "status": "Active",
+      "lastLogin": "Today, 09:12 AM"
+    },
+    {
+      "id": "usr-sunita",
+      "name": "Sunita Patil",
+      "email": "sunita.patil@urbandev.mh.gov.in",
+      "role": "Department Officer",
+      "dept": "Urban Dev",
+      "status": "Active",
+      "lastLogin": "Yesterday, 4:30 PM"
+    },
+    {
+      "id": "usr-anand",
+      "name": "Dr. Anand Kulkarni",
+      "email": "anand.kulkarni@mpcb.gov.in",
+      "role": "Nodal Officer",
+      "dept": "Pollution Control",
+      "status": "Inactive",
+      "lastLogin": "12 Sep 2026"
+    },
+    {
+      "id": "usr-admin",
+      "name": "System Admin",
+      "email": "admin@beesetu.gov.in",
+      "role": "Super Admin",
+      "dept": "IT Services",
+      "status": "Active",
+      "lastLogin": "Today, 08:00 AM"
+    },
+    {
+      "id": "usr-meena",
+      "name": "Meena Iyer",
+      "email": "meena.iyer@fssai.gov.in",
+      "role": "Nodal Officer",
+      "dept": "FSSAI / Health",
+      "status": "Active",
+      "lastLogin": "Today, 11:05 AM"
+    },
+    {
+      "id": "usr-shinde",
+      "name": "R. K. Shinde",
+      "email": "rk.shinde@fireservices.mh.gov.in",
+      "role": "Department Officer",
+      "dept": "Fire & Emergency",
+      "status": "Active",
+      "lastLogin": "Today, 08:40 AM"
+    },
+    {
+      "id": "usr-patel",
+      "name": "A. Patel",
+      "email": "a.patel@transport.mh.gov.in",
+      "role": "Department Officer",
+      "dept": "Transport Dept",
+      "status": "Active",
+      "lastLogin": "Yesterday, 6:10 PM"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "APP-9021",
+      "dept": "Fire & Emergency",
+      "issue": "SLA Deadline Approaching (< 24h)",
+      "time": "2 hours ago",
+      "critical": true
+    },
+    {
+      "id": "APP-8834",
+      "dept": "Pollution Control",
+      "issue": "Escalated to Nodal Officer (SLA Breached)",
+      "time": "5 hours ago",
+      "critical": true
+    },
+    {
+      "id": "APP-9102",
+      "dept": "Labour Dept",
+      "issue": "Joint Inspection Scheduling Conflict",
+      "time": "1 day ago",
+      "critical": false
+    }
+  ],
+  "notifications": [
+    {
+      "id": "n-1790937494961-APP-9021",
+      "title": "SLA reminder — APP-9021",
+      "body": "Horizon Chemicals: deadline < 24h left. Officer R. K. Shinde notified.",
+      "read": false
+    },
+    {
+      "id": "n-1790937494961-APP-9190",
+      "title": "SLA reminder — APP-9190",
+      "body": "MediLife Pharma: deadline 1 day left. Officer Anjali M. notified.",
+      "read": false
+    },
+    {
+      "id": "n-1790937494961-APP-9182",
+      "title": "SLA reminder — APP-9182",
+      "body": "CityScape Builders: deadline 5 hours left. Officer S. K. Iyer notified.",
+      "read": false
+    },
+    {
+      "id": "n-deemed-1790937476574",
+      "title": "Deemed approval — APP-8910",
+      "body": "Urban Eats Chain cleared via ESC-8009.",
+      "read": false
+    },
+    {
+      "id": "n-1790613538274-APP-9021",
+      "title": "SLA reminder — APP-9021",
+      "body": "Horizon Chemicals: deadline < 24h left. Officer R. K. Shinde notified.",
+      "read": false
+    },
+    {
+      "id": "n-1790613538274-APP-9190",
+      "title": "SLA reminder — APP-9190",
+      "body": "MediLife Pharma: deadline 1 day left. Officer Anjali M. notified.",
+      "read": false
+    },
+    {
+      "id": "n-1790613538274-APP-9182",
+      "title": "SLA reminder — APP-9182",
+      "body": "CityScape Builders: deadline 5 hours left. Officer S. K. Iyer notified.",
+      "read": false
+    },
+    {
+      "id": "n-deemed-1790613497080",
+      "title": "Deemed approval — APP-8975",
+      "body": "Global Logistics cleared via ESC-8011.",
+      "read": false
+    },
+    {
+      "id": "n-deemed-1790613380860",
+      "title": "Deemed approval — APP-8990",
+      "body": "SolarTech India cleared via ESC-8012.",
+      "read": false
+    },
+    {
+      "id": "n1",
+      "title": "SLA breach — Sunrise Foods",
+      "body": "APP-9118 escalated under RTS Act.",
+      "read": false
+    },
+    {
+      "id": "n2",
+      "title": "Joint inspection today",
+      "body": "CityScape Builders — Fire + Urban Dev at 4 PM.",
+      "read": false
+    },
+    {
+      "id": "n3",
+      "title": "Rule proposal pending",
+      "body": "12 proposed regulatory changes await verification.",
+      "read": false
+    }
+  ],
+  "remindersSent": [
+    {
+      "id": "REM-1790937494961",
+      "sentAt": "2026-10-02T10:38:14.961Z",
+      "count": 3,
+      "applicationIds": [
+        "APP-9182",
+        "APP-9190",
+        "APP-9021"
+      ]
+    },
+    {
+      "id": "REM-1790613538274",
+      "sentAt": "2026-09-28T16:38:58.274Z",
+      "count": 3,
+      "applicationIds": [
+        "APP-9182",
+        "APP-9190",
+        "APP-9021"
+      ]
+    }
+  ]
+}
